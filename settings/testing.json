@@ -1,0 +1,60 @@
+{
+  "vessel": {
+    "name": "test vessel",
+    "brand": "Maxi",
+    "type": "Fenix",
+    "uuid": "urn:mrn:signalk:uuid:24e12176-a4c2-447d-817b-6886248e7156",
+    "mmsi": "urn:mrn:imo:mmsi:257817010"
+  },
+  "mdns": true,
+  "ssl": false,
+  "interfaces": {
+    "bower": true,
+    "rest": true,
+    "ws": true,
+    "tcp": true,
+    "charts": true,
+    "webapps": true
+  },
+  "pipedProviders": [
+    {
+      "id": "test_file",
+      "pipeElements": [
+        {
+          "type": "providers/filestream",
+          "options": {
+            "filename": "samples/plaka.log"
+          },
+          "optionMappings": [
+            {
+              "fromAppProperty": "argv.nmeafilename",
+              "toOption": "filename"
+            }
+          ]
+        },
+        {
+          "type": "providers/throttle",
+          "options": {
+            "rate": 500
+          }
+        },
+        {
+          "type": "providers/liner"
+        },
+        {
+          "type": "providers/nmea0183-signalk",
+          "optionMappings": [
+            {
+              "fromAppProperty": "selfId",
+              "toOption": "selfId"
+            },
+            {
+              "fromAppProperty": "selfType",
+              "toOption": "selfType"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

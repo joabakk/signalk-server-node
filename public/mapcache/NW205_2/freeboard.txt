@@ -1,0 +1,9 @@
+
+	var NW205_2 = L.tileLayer("http://{s}.{server}:8080/mapcache/NW205_2/{z}/{x}/{y}.png", {
+		server: host,
+		subdomains: 'abcd',
+		attribution: 'NW205_2 LYSEFJORDEN NU/NW205_2 RA/1300 1200 DU/2',
+		minZoom: 12,
+		maxZoom: 15,
+		tms: true
+		}).addTo(map);
