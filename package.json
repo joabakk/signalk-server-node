@@ -101,6 +101,7 @@
     "canboatjs": "^1.0.0",
     "chalk": "^2.4.1",
     "clear": "^0.1.0",
+    "cluster": "^0.7.7",
     "compare-versions": "^3.0.1",
     "compression": "^1.7.3",
     "cookie": "^0.3.1",
